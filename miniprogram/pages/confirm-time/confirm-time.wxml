@@ -1,0 +1,48 @@
+<view class="container">
+  <view class="section-title">确认可用时间</view>
+  
+  <!-- 显示所有时间段 -->
+  <view class="card time-slots-card">
+    <view 
+      class="time-slot-item" 
+      wx:for="{{timeSlots}}" 
+      wx:key="id"
+      wx:for-item="slot"
+    >
+      <view class="slot-title">时间段{{slot.id.replace('time', '')}}</view>
+      <view class="slot-time">{{slot.fullTime}}</view>
+      <view class="slot-checkbox">
+        <checkbox 
+          checked="{{slot.checked}}" 
+          bindtap="onSlotTap"
+          data-id="{{slot.id}}"
+          color="#07C160"
+        />
+        <text class="checkbox-label">接受此时间段</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 参与者姓名输入 -->
+  <view class="card" wx:if="{{showNameInput}}">
+    <view class="form-item">
+      <text class="form-label">{{isCreator ? '你的名字（创建者）' : '你的名字'}}</text>
+      <input 
+        class="form-input" 
+        placeholder="{{isCreator ? '请输入创建者名字' : '请输入你的名字'}}" 
+        value="{{name}}"
+        bindinput="onNameInput"
+      />
+    </view>
+  </view>
+
+  <!-- 提交按钮 -->
+  <view class="btn-wrapper" wx:if="{{showSubmitBtn}}">
+    <button class="btn" bindtap="onSubmit">提交</button>
+  </view>
+
+  <!-- 进度提示 -->
+  <view class="progress-tip" wx:if="{{progressText}}">
+    <text>{{progressText}}</text>
+  </view>
+</view>

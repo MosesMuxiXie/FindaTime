@@ -1,0 +1,67 @@
+.meeting-list {
+  margin-bottom: 30rpx;
+}
+
+.meeting-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+
+.meeting-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333333;
+}
+
+.meeting-info {
+  font-size: 26rpx;
+  color: #666666;
+}
+
+.info-text {
+  margin-right: 20rpx;
+}
+
+.meeting-status {
+  margin-top: 8rpx;
+}
+
+.status-tag {
+  display: inline-block;
+  padding: 6rpx 20rpx;
+  border-radius: 20rpx;
+  font-size: 22rpx;
+}
+
+.status-tag.completed {
+  background: #E8F5E9;
+  color: #07C160;
+}
+
+.status-tag.pending {
+  background: #FFF3E0;
+  color: #FF9800;
+}
+
+.empty-state {
+  min-height: 400rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-btn-wrapper {
+  position: fixed;
+  bottom: 40rpx;
+  left: 20rpx;
+  right: 20rpx;
+  z-index: 100;
+}
+
+.create-btn {
+  background: #07C160;
+  color: #FFFFFF;
+  font-size: 32rpx;
+  font-weight: bold;
+}

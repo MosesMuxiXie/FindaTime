@@ -1,0 +1,70 @@
+<view class="container">
+  <!-- 调试信息 -->
+  <view style="padding: 20rpx; margin-bottom: 20rpx; background: #fff5f5; border-radius: 8rpx; word-break: break-all;">
+    <text style="display: block; margin-bottom: 10rpx;">调试信息:</text>
+    <text style="display: block;">参与者数量: {{participants.length}}</text>
+    <text style="display: block;">时间段数量: {{timeSlots.length}}</text>
+    <text style="display: block;" wx:if="{{participants.length > 0}}">第一个参与者: {{participants[0].name}}</text>
+    <text style="display: block;" wx:if="{{participants.length > 0}}">第一个参与者选中: {{participants[0].selectedSlots}}</text>
+    <text style="display: block;" wx:if="{{timeSlots.length > 0}}">第一个时间段ID: {{timeSlots[0].id}}</text>
+  </view>
+
+  <!-- 会面信息 -->
+  <view class="card meeting-info-card">
+    <view class="meeting-title">{{meeting.purpose}}</view>
+    <view class="meeting-meta">
+      <text class="meta-text">创建时间：{{meeting.createTime}}</text>
+    </view>
+  </view>
+
+  <!-- 结果表格 -->
+  <view class="card table-card">
+    <view class="table-header">
+      <view class="table-cell name-cell">姓名</view>
+      <view
+        class="table-cell time-cell"
+        wx:for="{{timeSlots}}"
+        wx:key="id"
+      >
+        <text class="time-label">时间段{{item.id.replace('time', '')}}</text>
+        <text class="time-detail">{{item.date}}</text>
+      </view>
+    </view>
+
+    <view class="table-body">
+      <view
+        class="table-row"
+        wx:for="{{participants}}"
+        wx:key="time"
+        wx:for-item="participant"
+      >
+        <view class="table-cell name-cell">{{participant.name}}</view>
+        <view
+          class="table-cell check-cell"
+          wx:for="{{timeSlots}}"
+          wx:key="id"
+          wx:for-item="slot"
+        >
+          <text wx:if="{{participant.selectedSlots.indexOf(slot.id) >= 0}}">可以</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 统计信息 -->
+  <view class="card stats-card">
+    <view class="stat-item">
+      <text class="stat-label">参与人数：</text>
+      <text class="stat-value">{{participants.length}}人</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-label">可选时间段：</text>
+      <text class="stat-value">{{timeSlots.length}}个</text>
+    </view>
+  </view>
+
+  <!-- 确定按钮 -->
+  <view class="btn-wrapper">
+    <button class="btn" bindtap="onConfirm">确定</button>
+  </view>
+</view>

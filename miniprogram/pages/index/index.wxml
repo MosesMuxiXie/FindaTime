@@ -1,0 +1,36 @@
+<view class="container">
+  <view class="section-title">我的会面</view>
+  
+  <!-- 会面列表 -->
+  <view class="meeting-list" wx:if="{{meetingList.length > 0}}">
+    <view 
+      class="card meeting-card" 
+      wx:for="{{meetingList}}" 
+      wx:key="id"
+      bindtap="onMeetingTap"
+      data-id="{{item.id}}"
+    >
+      <view class="meeting-title">{{item.purpose}}</view>
+      <view class="meeting-info">
+        <text class="info-text">参与人数：{{item.participantCount}}人</text>
+      </view>
+      <view class="meeting-info">
+        <text class="info-text">创建时间：{{item.createTime}}</text>
+      </view>
+      <view class="meeting-status">
+        <text wx:if="{{item.completed}}" class="status-tag completed">已完成</text>
+        <text wx:else class="status-tag pending">进行中</text>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 空状态 -->
+  <view class="empty-state" wx:else>
+    <text class="empty-text">暂无会面记录</text>
+  </view>
+  
+  <!-- 创建新会面按钮 -->
+  <view class="create-btn-wrapper">
+    <button class="btn create-btn" bindtap="onCreateNew">创建新会面时间</button>
+  </view>
+</view>

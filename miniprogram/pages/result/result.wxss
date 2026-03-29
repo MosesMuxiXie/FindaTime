@@ -1,0 +1,114 @@
+.meeting-info-card {
+  margin-bottom: 20rpx;
+}
+
+.meeting-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 12rpx;
+}
+
+.meeting-meta {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.table-card {
+  overflow-x: auto;
+  margin-bottom: 20rpx;
+}
+
+.table-header {
+  display: flex;
+  background: #F5F5F5;
+  font-weight: bold;
+  border-radius: 12rpx 12rpx 0 0;
+}
+
+.table-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-row {
+  display: flex;
+  border-bottom: 1rpx solid #EEEEEE;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-cell {
+  min-width: 120rpx;
+  padding: 20rpx 16rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  text-align: center;
+  border-right: 1rpx solid #EEEEEE;
+}
+
+.table-cell:last-child {
+  border-right: none;
+}
+
+.name-cell {
+  flex: 0 0 150rpx;
+  background: #FFFFFF;
+  font-size: 26rpx;
+  color: #333333;
+}
+
+.time-cell {
+  flex: 1;
+}
+
+.time-label {
+  font-size: 24rpx;
+  color: #333333;
+  font-weight: bold;
+  margin-bottom: 6rpx;
+}
+
+.time-detail {
+  font-size: 20rpx;
+  color: #999999;
+}
+
+.check-cell {
+  flex: 1;
+  background: #FFFFFF;
+}
+
+.check-cell.checked {
+  background: #E8F5E9;
+}
+
+.stats-card {
+  margin-bottom: 20rpx;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12rpx 0;
+  font-size: 28rpx;
+}
+
+.stat-label {
+  color: #666666;
+}
+
+.stat-value {
+  color: #333333;
+  font-weight: bold;
+}
+
+.btn-wrapper {
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}

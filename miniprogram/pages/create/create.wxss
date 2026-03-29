@@ -1,0 +1,24 @@
+.time-row {
+  display: flex;
+  gap: 20rpx;
+  margin-bottom: 30rpx;
+}
+
+.time-col {
+  flex: 1;
+}
+
+.picker-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.picker-input .placeholder {
+  color: #CCCCCC;
+}
+
+.btn-wrapper {
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}

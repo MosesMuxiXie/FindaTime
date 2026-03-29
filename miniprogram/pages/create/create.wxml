@@ -1,0 +1,80 @@
+<view class="container">
+  <view class="section-title">选择你的时间段</view>
+  
+  <view class="card">
+    <!-- 会面目的 -->
+    <view class="form-item">
+      <text class="form-label">会面目的</text>
+      <input 
+        class="form-input" 
+        placeholder="请输入会面目的" 
+        value="{{purpose}}"
+        bindinput="onPurposeInput"
+      />
+    </view>
+
+    <!-- 日期选择 -->
+    <view class="form-item">
+      <text class="form-label">选择日期</text>
+      <picker 
+        mode="multiSelector" 
+        range="{{dateRange}}" 
+        range-key="{{'label'}}"
+        value="{{dateIndex}}"
+        bindchange="onDateChange"
+      >
+        <view class="form-input picker-input">
+          <text wx:if="{{selectedDate}}">{{selectedDate}}</text>
+          <text wx:else class="placeholder">选择年—月—日</text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 时间选择 -->
+    <view class="time-row">
+      <view class="time-col">
+        <text class="form-label">开始时间</text>
+        <picker 
+          mode="time" 
+          value="{{startTime}}" 
+          bindchange="onStartTimeChange"
+        >
+          <view class="form-input picker-input">
+            <text wx:if="{{startTime}}">{{startTime}}</text>
+            <text wx:else class="placeholder">选择</text>
+          </view>
+        </picker>
+      </view>
+      <view class="time-col">
+        <text class="form-label">结束时间</text>
+        <picker 
+          mode="time" 
+          value="{{endTime}}" 
+          bindchange="onEndTimeChange"
+        >
+          <view class="form-input picker-input">
+            <text wx:if="{{endTime}}">{{endTime}}</text>
+            <text wx:else class="placeholder">选择</text>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <!-- 参与人数 -->
+    <view class="form-item">
+      <text class="form-label">参与人数</text>
+      <input 
+        class="form-input" 
+        type="number" 
+        placeholder="请输入人数" 
+        value="{{participantCount}}"
+        bindinput="onCountInput"
+      />
+    </view>
+  </view>
+
+  <!-- 继续按钮 -->
+  <view class="btn-wrapper" wx:if="{{showContinueBtn}}">
+    <button class="btn" bindtap="onContinue">继续</button>
+  </view>
+</view>

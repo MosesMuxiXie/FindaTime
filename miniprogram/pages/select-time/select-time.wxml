@@ -1,0 +1,158 @@
+<view class="container">
+  <view class="section-title">选择你的时间段</view>
+  
+  <!-- 时间段2（选填） -->
+  <view class="card">
+    <view class="section-subtitle">时间段2（选填）</view>
+    
+    <view class="form-item">
+      <text class="form-label">选择日期</text>
+      <picker 
+        mode="multiSelector" 
+        range="{{dateRange}}" 
+        range-key="{{'label'}}"
+        value="{{date2Index}}"
+        bindchange="onDate2Change"
+      >
+        <view class="form-input picker-input">
+          <text wx:if="{{selectedDate2}}">{{selectedDate2}}</text>
+          <text wx:else class="placeholder">选择年—月—日</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="time-row">
+      <view class="time-col">
+        <text class="form-label">开始时间</text>
+        <picker 
+          mode="time" 
+          value="{{startTime2}}" 
+          bindchange="onStartTime2Change"
+        >
+          <view class="form-input picker-input">
+            <text wx:if="{{startTime2}}">{{startTime2}}</text>
+            <text wx:else class="placeholder">选择</text>
+          </view>
+        </picker>
+      </view>
+      <view class="time-col">
+        <text class="form-label">结束时间</text>
+        <picker 
+          mode="time" 
+          value="{{endTime2}}" 
+          bindchange="onEndTime2Change"
+        >
+          <view class="form-input picker-input">
+            <text wx:if="{{endTime2}}">{{endTime2}}</text>
+            <text wx:else class="placeholder">选择</text>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+  <!-- 时间段3（选填） -->
+  <view class="card">
+    <view class="section-subtitle">时间段3（选填）</view>
+    
+    <view class="form-item">
+      <text class="form-label">选择日期</text>
+      <picker 
+        mode="multiSelector" 
+        range="{{dateRange}}" 
+        range-key="{{'label'}}"
+        value="{{date3Index}}"
+        bindchange="onDate3Change"
+      >
+        <view class="form-input picker-input">
+          <text wx:if="{{selectedDate3}}">{{selectedDate3}}</text>
+          <text wx:else class="placeholder">选择年—月—日</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="time-row">
+      <view class="time-col">
+        <text class="form-label">开始时间</text>
+        <picker 
+          mode="time" 
+          value="{{startTime3}}" 
+          bindchange="onStartTime3Change"
+        >
+          <view class="form-input picker-input">
+            <text wx:if="{{startTime3}}">{{startTime3}}</text>
+            <text wx:else class="placeholder">选择</text>
+          </view>
+        </picker>
+      </view>
+      <view class="time-col">
+        <text class="form-label">结束时间</text>
+        <picker 
+          mode="time" 
+          value="{{endTime3}}" 
+          bindchange="onEndTime3Change"
+        >
+          <view class="form-input picker-input">
+            <text wx:if="{{endTime3}}">{{endTime3}}</text>
+            <text wx:else class="placeholder">选择</text>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+  <!-- 时间段4（选填） -->
+  <view class="card">
+    <view class="section-subtitle">时间段4（选填）</view>
+    
+    <view class="form-item">
+      <text class="form-label">选择日期</text>
+      <picker 
+        mode="multiSelector" 
+        range="{{dateRange}}" 
+        range-key="{{'label'}}"
+        value="{{date4Index}}"
+        bindchange="onDate4Change"
+      >
+        <view class="form-input picker-input">
+          <text wx:if="{{selectedDate4}}">{{selectedDate4}}</text>
+          <text wx:else class="placeholder">选择年—月—日</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="time-row">
+      <view class="time-col">
+        <text class="form-label">开始时间</text>
+        <picker 
+          mode="time" 
+          value="{{startTime4}}" 
+          bindchange="onStartTime4Change"
+        >
+          <view class="form-input picker-input">
+            <text wx:if="{{startTime4}}">{{startTime4}}</text>
+            <text wx:else class="placeholder">选择</text>
+          </view>
+        </picker>
+      </view>
+      <view class="time-col">
+        <text class="form-label">结束时间</text>
+        <picker 
+          mode="time" 
+          value="{{endTime4}}" 
+          bindchange="onEndTime4Change"
+        >
+          <view class="form-input picker-input">
+            <text wx:if="{{endTime4}}">{{endTime4}}</text>
+            <text wx:else class="placeholder">选择</text>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+  <!-- 提交按钮 -->
+  <view class="btn-wrapper">
+    <button class="btn" bindtap="onSubmit">提交</button>
+  </view>
+</view>

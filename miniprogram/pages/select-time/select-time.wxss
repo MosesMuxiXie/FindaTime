@@ -1,0 +1,21 @@
+.section-subtitle {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 20rpx;
+}
+
+.picker-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.picker-input .placeholder {
+  color: #CCCCCC;
+}
+
+.btn-wrapper {
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
